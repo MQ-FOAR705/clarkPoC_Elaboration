@@ -1,0 +1,54 @@
+%%% SETUP %%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage{hyperref}
+\setcounter{secnumdepth}{0} %Table of contents without numbers
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+}
+
+%%%%% /SETUP %%%%%
+%%%%% Title page %%%%%
+\title{Proof of Concept - Elaboration}
+\subtitle{FOAR705 2019}
+\author{Matthew Clark\\43695841}
+\date{\vspace{-5ex}} %Used to remove date when using \maketitle%
+\begin{document}
+\doublespacing
+\maketitle
+%%%%% /Title Page %%%%%
+%%%%% Table of Contents %%%%%
+\newpage
+\tableofcontents
+%%%%% /Table of Contents %%%%%
+%%%%% Entry 1 %%%%%
+\newpage
+\section{Elaboration I}
+\subsection{Scope}
+Before I begin in discussing the various technologies that could be used in my project, I have decided to narrow the scope for this research project such that I can focus more intently on it. Hence, my project will be focusing purely on using an API to gather a data set. More specifically, my scope includes:
+\begin{enumerate}
+    \item Identifying the scope of the data I want to collect. Because this is dependent on the specific API I use, this will be identified as I gain access to a specific API.
+    \item Identifying what API I want to use. At this stage, I will be looking at the Beatport API.
+    \item Developing a script in Python in order to access the API and gather the data based on Beatport's API's documentation
+    \item Convert the retrieved JSON data into a spreadsheet
+    \item Copy the spreadsheet and clean up the data
+\end{enumerate}
+\subsection{Technologies}
+Beatport api; python in pycharm; excel; json; etc.
+\subsection{Alternative Routes}
+Other api's; scraping from web (charts, online magazines)
+
+
+
+\end{document}
