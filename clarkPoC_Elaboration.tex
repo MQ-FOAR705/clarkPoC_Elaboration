@@ -39,16 +39,21 @@
 Before I begin in discussing the various technologies that could be used in my project, I have decided to narrow the scope for this research project such that I can focus more intently on it. Hence, my project will be focusing purely on using an API to gather a data set. More specifically, my scope includes:
 \begin{enumerate}
     \item Identifying the scope of the data I want to collect. Because this is dependent on the specific API I use, this will be identified as I gain access to a specific API.
-    \item Identifying what API I want to use. At this stage, I will be looking at the Beatport API.
-    \item Developing a script in Python in order to access the API and gather the data based on Beatport's API's documentation
-    \item Convert the retrieved JSON data into a spreadsheet
+    \item Identifying what API I want to use.
+    \item Developing a script in some language in order to access the API and gather the data based on the API's documentation
+    \item Convert the retrieved data and parse it in order to import it into a spreadsheet
     \item Copy the spreadsheet and clean up the data
 \end{enumerate}
 \subsection{Technologies}
-Beatport api; python in pycharm; excel; json; etc.
+First technology I am aiming to use is Beatport's API, as it is the most popular charting & online store for modern electronic music. The API uses OAUTH1.0 and the API can be accessed through Python, which can retrieved data by JSON strings. All the API commands and documentation are available on its API website:\\\url{https://oauth-api.beatport.com/}\\This means I can develop a script to gather the data required and import it into excel using its data import function.
+
 \subsection{Alternative Routes}
-Other api's; scraping from web (charts, online magazines)
-
-
+As the Beatport API requires being able to get an API Key, which I must request directly from Beatport, if I am unable to get a key, I need to think of alternative strategies.\\
+The first strategy is to use web scraping using archived Beatport pages. This will be trickier, as I will need to import web pages through the internet wayward machine, and extract the data using developed Python scripts, but this is a viable alternative.\\
+The second strategy is to use an alternative to Beatport. The issue with using something such as the Spotify API is that Spotify doesn't classify anything lower then \textit{Electronic}, so specifically getting Techno music will mean using Spotify will be redundant, including other services similar to it. A sight such as Discogs, which has an accessible API, is a possibility, and they do categorise songs by sub-genre. The problem is each song's genre is tied to all the song's genre classifications, meaning a song can be classified as Techno if it has some similarities to the genre, while not really representing the genre. For example, a song could be classified as \textit{house, techno, dub techno, soul, breakbeat, leftfield}, and hence using the API will require me to focus on songs with the techno genre tag, while also removing songs which have any other associated genre tag. Discogs also categorise songs by their release format rather than by songs, so pulling data will also include pulling in albums worth of songs, rather than individual tracks. Lastly, discogs can filter songs by popularity, rather than by sales, so, for example, I will have to gather songs based on 'Most owned' or 'Most wanted' rather than 'Most purchased'.\\
+Another API alternative is Traxsource, which is similar to Beatport, however it doesn't have a general API, but instead there is an API created in the Ruby language, developed using Heroku and MongoDB, which means learning 3 different forms of software and getting them all to talk to one another successfully, which may cause some issues. The documentation is also very sparse, so being able to extract bulk data may not even be possible.\\
+The last strategy is web scraping from various online magazines, blogs, and forums. While there are many 'Top x songs from the year xxxx' lists floating around, cataloguing them all and defining a specific scope for my data will be a lot harder, while also being more time consuming, but is not an unviable alternative at this stage.
+%todo
+% Links to documentation; examples of magazine sites.; enumerate each point with a step by step plan for execution.
 
 \end{document}
