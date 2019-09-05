@@ -4,7 +4,7 @@
 \usepackage{titling}
 \usepackage{setspace}
 \usepackage{hyperref}
-\setcounter{secnumdepth}{0} %Table of contents without numbers
+%\setcounter{secnumdepth}{0} %Table of contents without numbers
 
 \newcommand{\subtitle}[1]{%
   \posttitle{%
@@ -36,7 +36,7 @@
 \newpage
 \section{Elaboration I}
 \subsection{Scope}
-Before I begin in discussing the various technologies that could be used in my project, I have decided to narrow the scope for this research project such that I can focus more intently on it. Hence, my project will be focusing purely on using an API to gather a data set. More specifically, my scope includes:
+Before I discuss the various technologies that could be used in my project, I have decided to narrow the scope for this research project so that I can focus my available resources on a dedicated problem. Hence, my project will be focusing purely on using an API to gather a data set. More specifically, my scope includes:
 \begin{enumerate}
     \item Identifying the scope of the data I want to collect. Because this is dependent on the specific API I use, this will be identified as I gain access to a specific API.
     \item Identifying what API I want to use.
@@ -45,68 +45,193 @@ Before I begin in discussing the various technologies that could be used in my p
     \item Copy the spreadsheet and clean up the data
 \end{enumerate}
 \subsection{Technologies}
-First technology I am aiming to use is Beatport's API, as it is the most popular charting \& online store for modern electronic music. The API uses OAUTH1.0 and the API can be accessed through Python, which can retrieved data by JSON strings. All the API commands and documentation are available on its API website:\\\url{https://oauth-api.beatport.com/}\\This means I can develop a script to gather the data required and import it into excel using its data import function.
+First technology I am aiming to use is Beatport's API, as it is the most popular charting \& online store for modern electronic music. The API uses OAUTH1.0 and the API can be accessed through Python, PHP, and Ruby. All the API commands and documentation are available on its API website:\\\url{https://oauth-api.beatport.com/}\\This means I can develop a script to gather the data required and import it into excel using its data import function.
 
 \subsection{Alternative Strategies:}
 As the Beatport API requires being able to get an API Key, which I must request directly from Beatport, if I am unable to get a key, I need to think of alternative strategies.
 \begin{enumerate}
-    \item The first strategy is to use web scraping using archived Beatport pages. This will be trickier, as I will need to import web pages through the internet wayward machine, and extract the data using developed Python scripts, but this is a viable alternative.
+    \item The first strategy is to use web scraping using archived Beatport pages. This will be trickier, as I will need to scrape web pages using the internet archive using developed scripts, however but this is not a totally unviable alternative.
     \item The second strategy is to use an alternative API to Beatport:
     \begin{enumerate}
-        \item The issue with using something such as the Spotify API is that Spotify doesn't classify anything lower then \textit{Electronic}, so specifically getting Techno music will mean using Spotify will be redundant, including other services similar to it.
-        \item A site such as Discogs, which has an accessible API, is a possibility, and they do categorise songs by sub-genre. The problem is each song's genre is tied to all the song's genre classifications, meaning a song can be classified as Techno if it has some similarities to the genre, while not really representing the genre. For example, a song could be classified as \textit{house, techno, dub techno, soul, breakbeat, leftfield}, and hence using the API will require me to focus on songs with the techno genre tag, while also removing songs which have any other associated genre tag. Discogs also categorise songs by their release format rather than by songs, so pulling data will also include pulling in albums worth of songs, rather than individual tracks. Lastly, discogs can filter songs by popularity, rather than by sales, so, for example, I will have to gather songs based on 'Most owned' or 'Most wanted' rather than 'Most purchased'.
-        \item Another API alternative is Traxsource, which is similar to Beatport, however it doesn't have a general API, but instead there is an API created in the Ruby language, developed using Heroku and MongoDB, which means learning 3 different forms of software and getting them all to talk to one another successfully, which may cause some issues. The documentation is also very sparse, so being able to extract bulk data may not even be possible. 
+        \item The issue with using something such as the Spotify API is that Spotify doesn't classify anything lower then \textit{Electronic}, so specifically getting Techno music will mean Spotify is redundant, including other similar services which offer an API.
+        \item Soundcloud offers an API and there are various API programs and web scraping scripts developed already. However, due to Soundcloud's business structure, which allows anyone to upload any original audio, getting quality songs and data will be hard.
+        \item A site such as Discogs, which has an accessible API, is a possibility as they do categorise songs by sub-genre. The problem is each song's genre is tied to all the song's genre classifications, meaning a song can be classified as Techno if it has some similarities to the genre, while not really representing the genre. For example, a song could be classified as \textit{house, techno, dub techno, soul, breakbeat, leftfield}, and hence using the API will require me to focus on songs with the techno genre tag, while also removing songs which have any other associated genre tag. Discogs also categorise songs by their release format rather than by songs, so pulling data will also include pulling in albums worth of songs, rather than individual tracks. Lastly, discogs can filter songs by popularity, rather than by sales, so, for example, I will have to gather songs based on 'Most Wanted' or 'Most Collected' rather than 'Most purchased'.
+        \item Another API alternative is Traxsource, which is similar to Beatport, however it doesn't have a general API, but instead there is an API created in the Ruby language, developed using Heroku and MongoDB, which means learning 3 different platforms and getting them all to talk to one another successfully, which not only complicates everything, but leads to a higher chance of errors. The documentation is also very sparse, so being able to extract bulk data may not even be possible.
     \end{enumerate}
-    \item The last strategy is web scraping from various online magazines, blogs, and forums. While there are many 'Top x songs from the year xxxx' lists floating around, cataloguing them all and defining a specific scope for my data will be a lot harder, while also being more time consuming, but is not an unviable alternative at this stage.  
+    \item The last strategy is web scraping from various online magazines, blogs, and forums. While there are many 'Top x songs from the year xxxx' lists floating around, cataloguing them all and defining a specific scope for my data will be a lot harder, while also being more time consuming, and such I believe this route will be out of scope for this project.
 \end{enumerate}
 %%%%%
+\newpage
 \section{Elaboration II}
 %%%%%
 \subsection{Beatport API}
 \textbf{Overview:}
 \begin{itemize}
-    \item \textbf{Online Since:}
-    \item \textbf{Popularity}
-    \item \textbf{Wikipedia Summary:}
-    \item \textbf{Website Link:}
-    \item \textbf{API Link:}
-    \item \textbf{Documentation:}
-    \item \textbf{Languages:}
+    \item \textbf{Online Since:} 2004
+    \item \textbf{Description:} Home of electronic music for DJ's, Producers, and their fans.
+    \item \textbf{Website Link:} https://www.beatport.com/
+    \item \textbf{API Link:} https://oauth-api.beatport.com/
+    \item \textbf{Documentation:} https://oauth-api.beatport.com/
+    \item \textbf{Programming Language:} Not specified (Needs to interact with OAuth and Json)
 \end{itemize}
 \textbf{Steps for Success:}
-\textbf{Reason for Failure:}
-\textbf{Alternative Routes using Beatport}\\
-Web Scraping using Internet Archive. Not elaborated due to scope and time intensity.
+\begin{itemize}
+    \item Request API Key
+    \item Download and test out the following scripts written for the Beatport API:
+    \begin{itemize}
+        \item \url{https://github.com/fedegiust/Beatport-API-JSON-feed}
+        \begin{itemize}
+            \item Language: PHP (Very little knowledge)
+        \end{itemize}
+        \item \url{https://github.com/sammyrulez/beatport-api}
+        \begin{itemize}
+            \item Language: Java (Decent Knowledge)
+        \end{itemize}
+        \item \url{https://github.com/mateomurphy/beatport}
+        \begin{itemize}
+            \item Language: Ruby on Rails (Little knowledge)
+        \end{itemize}
+    \end{itemize}
+    \item If successful, see if I can get a list of Techno songs released this year
+\end{itemize}
+\textbf{Reason for Failure:} I was unable to receive an API Key as Beatport are no longer giving out keys (see Learning Journal for more information).\\
+\textbf{Alternative Routes using Beatport}
+\begin{itemize}
+    \item Web Scraping
+    \begin{itemize}
+        \item The only thing close to a web scraping script for beatport is the following:\\
+        \url{https://github.com/indatawetrust/beatport-api/blob/master/index.js}\\
+        It is only designed to get the Top 100 of Beatport, or of a given genre on Beatport, by accessing the website directly. Being able to scrape data from the internet archive would require decent code manipulation. Is a potential alternative route, but currently out of scope.
+    \end{itemize}
+\end{itemize}
+\textbf{Conclusion:} Unable to access Beatport's API, however web scraping is still a potential alternative.
 
 \subsection{Traxsource API}
 \textbf{Overview:}
 \begin{itemize}
-    \item \textbf{Online Since:}
-    \item \textbf{Popularity}
-    \item \textbf{Wikipedia Summary:}
-    \item \textbf{Website Link:}
-    \item \textbf{API Link:}
-    \item \textbf{Documentation:}
-    \item \textbf{Languages:}
+    \item \textbf{Online Since:} 2004
+    \item \textbf{Description:} The hearts and minds of DJ's... \textit{Real House Music}
+    \item \textbf{Website Link:} \url{https://www.traxsource.com}
+    \item \textbf{API Link:} \url{https://github.com/janosrusiczki/traxsource-api}
+    \item \textbf{Documentation:} \url{https://traxsource-api.readthedocs.io/en/latest/}
+    \item \textbf{Programming Language:} Built in Ruby on Rails; uses Heroku as a server platform, and mLab MongoDB as the database service (cloud-based)
 \end{itemize}
 \textbf{Steps for Success:}
+\begin{itemize}
+    \item Install necessary software (Ruby, Rails, Bundler etc.)
+    \item Download the API
+    \item Follow the following instructional manuals:
+    \begin{itemize}
+        \item Getting Started on Heroku with Ruby on Rails:\\
+        \url{https://devcenter.heroku.com/articles/getting-started-with-rails5}
+        \item Connecting to your Database (MongoDB:\\
+        \url{https://docs.mlab.com/connecting/}
+        \item MongoDB Ruby Driver:\\
+        \url{https://docs.mongodb.com/ruby-driver/current/}
+    \end{itemize}
+    \item When all systems are running smoothly, attempt to pull out a list of Techno songs released this eyar.
+\end{itemize}
 \textbf{Reason for Failure:}
-\textbf{Alternative Routes using Traxsource}
+\begin{itemize}
+    \item This is not a traditional API which uses OAuth \& a set of keys, which adds another layer of confusion
+    \item I have never used Ruby on Rails before, so the PHP-esque layout of its files and directories took a while to wrap my head around
+    \item The documentation in the actual API is extremely sparse, simply stating it runs on Heroku with the mLab add-on
+    \begin{itemize}
+        \item The Heroku documentation is well presented, but left no room for errors. Once you got stuck, you have to figure your own way out, and due to my lack of experience with ruby, it was very time consuming figuring my way through it all.
+        \item The documentation for configuring MongoDB with Heroku, both on the Heroku website and MongoDB website, is very technical without any real step-by-steps, more-so just general points of information that you should use, and hence lead to a lot of confusion on whether or not I need to adjust a file's code or install a package, which means I have to then update everything in the pipeline
+    \end{itemize}
+    \item Because Heroku needs a command line to interface with, and the code pushed to git for it to work, there were many intricate pieces which never seemed to fully work with one another:
+    \begin{itemize}
+        \item Getting gem and ruby versions the same between everything was a struggle
+        \item Having to get the ruby program running on rails, with a heroku app launched, with the files synced to git, which are used to be deployed on heroku - all these never seemed to work well with one another.
+        \item Using command prompt was moderately successful from learning the shell from the carpentry exercises, however terms like \texttt{grep} are not valid commands, and had to look up the windows alternative (which is \texttt{findstr}).
+    \end{itemize}
+    \item Due to time constraints, this API attempt was mostly just using trial and error to get my way through the development process using google searches between every command to catch me up to speed on commands, the language, the platforms, and the errors I encountered. If I had more time to thoroughly understand every tool I was using and read all the documentation, I might of been able to get this to work, but because of this, this project has fallen out of scope for this unit.
+\end{itemize}
+\textbf{Alternative routes using Traxsource:}
+\begin{itemize}
+    \item Web Scraping
+    \begin{itemize}
+        \item Similarly with Beatport, there isn't anything really designed already to scrape information off traxsource, and would run into the same issues of accessing the internet archive. The closest I have found is this Github source code from a reddit thread, which looked at doing something similar to the Beatport scraper mentioned above:
+        \begin{itemize}
+            \item Reddit thread:\\ \url{https://www.reddit.com/r/learnpython/comments/7kxjel/attempting_to_scrape_an_element_with_no_class/}
+            \item Github repository:\\
+            \url{https://github.com/mkramer45/Traxsource_ScrapeElementNoClass}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\textbf{Conclusion:} After spending hours attempting to set up all systems with little specific documentation, I was unable to get the API running, and due to lack of knowledge and time restraints, this project is now out of scope for this assignment.
+
 
 \subsection{Discogs API}
 \textbf{Overview:}
 \begin{itemize}
-    \item \textbf{Online Since:}
-    \item \textbf{Popularity}
-    \item \textbf{Wikipedia Summary:}
-    \item \textbf{Website Link:}
-    \item \textbf{API Link:}
-    \item \textbf{Documentation:}
-    \item \textbf{Languages:}
+    \item \textbf{Online Since:} 2000
+    \item \textbf{Description:} The largest crowdsourced online music database
+    \item \textbf{Website Link:} \url{https://www.discogs.com}
+    \item \textbf{API Link:} \url{https://github.com/discogs/discogs_client}
+    \item \textbf{Documentation:} \url{https://www.discogs.com/developers}
+    \item \textbf{Programming Languages:} Python (including an example), Ruby, Php (with example), and Node.js
 \end{itemize}
 \textbf{Steps for Success:}
-\textbf{Potential Pitfalls & Alternative Routes:}
-
+\begin{itemize}
+    \item Download the Python API example:\\
+    \url{https://github.com/jesseward/discogs-oauth-example}
+    \item Start up PyCharm and create a new project
+    \item Sign up to Discogs through the development website and gain an API key
+    \item Use API key to run through example
+    \item Manipulate the example's database calls to retrieve Techno data from the last year
+\end{itemize}
+\textbf{Analysis:} I was finally able to successfully access a music database's API, and although I ran into some minor errors using Python, I had it running in about half an hour. From that I was able to manipulate the code such that I could retrieve the 100 '\textit{most relevant}' techno tracks of 2019, which I verified with a general search on the website.\\
+The relevant pains from my original scope this will help solve is being able to automate bulk Metadata retrieval that can be used to identify songs that can be used in a machine learning data set, and this API will help relieve some of those pains, while also gaining time I would've otherwise spent typing out every entry for every song.
+Henceforth, this route is a success and will be used for my original software publication.\\
+\textbf{Further Development:}
+\begin{itemize}
+    \item Synthesise the API and example API (plus any other programs I find) to create my own API
+    \item Familiarise myself with the various documentation \& methods to pull out the information I want
+    \item Manipulate the API to minimise human labour time for data entry and maximise automation
+    \item Develop a data set scope:
+    \begin{itemize}
+        \item How many songs do I want?
+        \item From what time period do I want the songs from? Do I want to focus on a specific time period more?
+        \item What Metadata do I want about the songs?
+            \item Artist
+            \item Title
+            \item Release Title
+            \item Label
+            \item Genre/style
+            \item Popularity
+            \begin{itemize}
+                \item Discogs measures this by 'hot'; 'most collected', and 'most wanted'
+            \end{itemize}
+        \item What are the limitations of Discogs API which will influence my data scope?
+        \item How will the data format of release types (eg: by albums, EP's or singles) affect my scope?
+    \end{itemize}
+    \item Learn how to export gathered data into a form that can be converted into a spreadsheet
+    \item Clean up the spreadsheet
+    \item Document all processes in a learning journal
+\end{itemize}
+\textbf{Potential Pitfalls \& Alternative Routes:}
+\begin{itemize}
+    \item Automation
+    \begin{itemize}
+        \item Discogs have limits on the page sizes that you can pull at one time (called \textbf{pagination} (see documentation)), alongside rate limiting, so depending on how complex I want to design this automation, the actual API framework may limit complexity.
+    \end{itemize}
+    \item Popularity
+    \begin{itemize}
+        \item Rather than sales, which was what I was aiming for by using Beatport and Traxsource, Discogs, being a database rather than a sales platform, measures popularity in 3 ways: \textit{hot}, \textit{most wanted}, and \textit{most collected}. While \textit{most collected} may be the closest applicability to sales, the others could help to expand the data set.
+        \item Another potential is being able to sort API retrieval by one of these 3 measurements, or whether or not this post-retrieval work, or even if I can retrieve quantifiable data based on these variables.
+    \end{itemize}
+    \item Format of Data
+    \begin{itemize}
+        \item The advantage of Beatport and Traxsource was it measures sales of individual single songs, which could each be specifically identified into a specific genre. Discogs, on the other hand, catalogues everything by release type, such as Albums, EP's, and Singles, and an album's genre may vary across songs. One approach is to limit my search to singles or EP's, if it is possible at all, or, after data retrieval, sort the releases by 'Number of Tracks' and remove large collections (again, if it is possible).
+    \item Alternative Routes:
+        \begin{itemize}
+            \item Discogs, being one of the largest online music databases, will have various different API scripts developed, which would all do the same thing but in different ways, so if I struggle with developing my own, analysing various other programs from Github may be a potential research point to cover. However, since I am actually able to access the API, this is the most likely route I will take, and I will be able to analyse the potential gains and limitations/pains of this API, and how it relates to my original scope's pains and gains.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\textbf{Conclusion:} Ultimately, after being unable to access either Beatport's or Traxsource's API, I was able to access Discogs' API. While potentially being the biggest online database of music, its range could also be its downfall, where as the other 2 website's specific niche in DJ-able electronic music such as Techno and House shine. However, this project will allow me to test out this API's strengths and weaknesses, and relate them to my original pains and gains found in my scope, while also developing a potential data set for future research.
 
 
 
